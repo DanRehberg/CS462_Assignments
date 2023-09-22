@@ -20,7 +20,7 @@ There are four game object groups in the *scene heirarchy*.
 	- Plane and cube using the *Point.shader* and *Point_Dir* material
  - **Spot Group**
 	- Plane and cube using the *Spot.shader* and *Unlit_Spot* material
-
+   
 Deactivate and activate the groups to observe correctness of shaders and lighting models as the assignment is being completed. The *Example Group* allows you to modify the built in Unity light which can be switched between a direction, point, and spot light. The other groups have a **Sphere** object which can be modified to alter their respective lighting model once the shaders are completed. These **Sphere** objects can be translated and rotated demonstrating variance in a lighting model (i.e., *direction lights change via rotations, points by translations, and spot lights with both rotations and translations*). **These modifications only happen when testing playing the game.** To do so, click the *Test Play* button and switch back to the *Scene* window to modify the **Sphere** objects. *This includes setting a color for the light in the **x, y, and z** values for **red, green, and blue** colors in the public **Color** vector in the **Sphere's** attached script*.
 
 ## Background
