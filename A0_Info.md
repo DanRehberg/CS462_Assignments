@@ -11,6 +11,17 @@ Download this repositoy, unzip it, then add the A0_LightsOn project within Unity
 
 If the **DiffuseLighting** scene is not open, then in the project window double click on DiffuseLighting inside: _Assets/Scenes_. **Ignore the NormalMapLighting scene, that will be for an upcoming assignment.**
 
+There are four game object groups in the *scene heirarchy*.
+- **Example Group**
+	- Uses built in Unity lighting features
+ - **Direction Group**
+	- Plane and cube using the *Dir.shader* and *Unlit_Dir* material
+ - **Point Group**
+	- Plane and cube using the *Point.shader* and *Point_Dir* material
+ - **Spot Group**
+	- Plane and cube using the *Spot.shader* and *Unlit_Spot* material
+Deactivate and activate the groups to observe correctness of shaders and lighting models as the assignment is being completed. The *Example Group* allows you to modify the built in Unity light which can be switched between a direction, point, and spot light. The other groups have a **Sphere** object which can be modified to alter their respective lighting model once the shaders are completed. These **Sphere** objects can be translated and rotated demonstrating variance in a lighting model (i.e., *direction lights change via rotations, points by translations, and spot lights with both rotations and translations*). **These modifications only happen when testing playing the game.** To do so, click the *Test Play* button and switch back to the *Scene* window to modify the **Sphere** objects. *This includes setting a color for the light in the **x, y, and z** values for **red, green, and blue** colors in the public **Color** vector in the **Sphere's** attached script*.
+
 ## Background
 Historically graphics rendering occurred through software renderers that ran on a CPU. Hardware acceleration became available with dedicated graphics hardware, i.e., GPUs. Graphics hardware provided application-specific integrated circuits (ASIC) to build out each section of a fixed-function render pipeline. The fixed-function pipeline existed in pre 2.0 OpenGL and through DirectX 7, standards and API designs of the Khronos Group and Microsoft, respectively. The fixed-function pipeline abstracted the need to interface with a GPU to get graphics on the screen quickly (via the ASICs for acceleration), but limited the artistic control over the final rendered graphics. A move towards a programmable model using shaders (*small programs to execute at stages of rendering on a GPU*) grew in OpenGL 2.0 and heavily in DirectX 9. Eventually this led to a more generalized architecture (unified) for GPUs rather than specialized circuits (ASICs) for each stage of a render pipeline. This allowed shaders to share a unified set of processors on a GPU, which consequently led to a massive growth in research and science utilizing general-purpose graphics processors (GPGPU) for parallel computations. *For a full history, check out **Programming Massively Parallel Processors: A Hands-on Approach** chapter 2, by David B. Kirk and Wen-mei W. Hwo.*
 
