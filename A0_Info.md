@@ -1,7 +1,7 @@
 
 # A0: Lights On
 
-[Video Link](https://www.youtube.com/watch?v=G304-deq1Vs&list=PLq-fIZVrxUpHXTB7_x9l1uRbGHUdkiO6Y)
+<a href="https://www.youtube.com/watch?v=G304-deq1Vs&list=PLq-fIZVrxUpHXTB7_x9l1uRbGHUdkiO6Y" target="_blank">Video Link</a>
 
 ## Description
 This assignment introduces the programmable render pipeline associated with *Modern 3D Graphics Programming*. The assignment will provide you a basic vertex and fragment shader for use within the Unity game engine, as well as give you fundamental understanding for basic lighting operations in virtual worlds. This information is relevant to diving into more advanced lighting models (e.g., **blinn-phong, physically-based rendering (PBR), ray tracing, etc..**) as well as further shading techniques for interactive computer graphics (e.g., **GPU animations, forward vs differed rendering, texture mapping, parallax textures, ray marching w/signed-distance fields (SDF)**). This assignment should also leave you with further systems-level understanding of graphics-processing units (GPU).
