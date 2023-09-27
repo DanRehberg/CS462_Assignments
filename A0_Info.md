@@ -195,15 +195,15 @@ Complete the tasks in the *Dir.shader*, *Point.shader*, and *Spot.shader*. Verif
 
 Zip you three shaders into an archive named *FirstName_LastName_A0.zip* filling in FirstName and LastName with your first and last name.
 
-**You MUST use the *model, view, and projection* matrices provided in the vertex shader. If you use any other helper functions to transform your vertex position to clip space then you will lose 5 points.**
+**You MUST use the *model, view, and projection* matrices provided in the vertex shader. If you use any other helper functions to transform your vertex position to clip space then you will lose some points.**
 
-This assignment is worth **10 points**:
-- 2 points for completing Dir.shader
+This assignment is worth **100 points**:
+- 20 points for completing Dir.shader
 	- Are the two tasks correct
-- 3 points for completing Point.shader
+- 30 points for completing Point.shader
 	- Are the three tasks correct
-- 4 points for completing Spot.shader
+- 40 points for completing Spot.shader
 	- Are the four tasks correct
-- 1 point for no errors for Dir.shader, Point.shader, and Spot.shader in Unity console
+- 10 point for no errors for Dir.shader, Point.shader, and Spot.shader in Unity console
   - (Is okay if errs present for the TBN shaders)
 
