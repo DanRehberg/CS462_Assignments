@@ -154,7 +154,7 @@ public class CollisionTests : MonoBehaviour
             Vector3[] aabb0 = shapes[i].getAABB();
             for (int j = 0; j < shapes.Length; ++j)
             {
-                if (i <= j) continue;
+                if (i >= j) continue;
                 Vector3[] aabb1 = shapes[j].getAABB();
                 //Finish testing axis-aligned separating axis thereom
                 if (collisionAABB(aabb0[0], aabb0[1], aabb1[0], aabb1[1]))
