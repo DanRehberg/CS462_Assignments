@@ -198,3 +198,23 @@ While *motionOn* is false, the console window will print when two AABBs are foun
 While *motionOn* is true, the boxes will have motion integration applied using a timestep and their respective velocities. You should be able to see the boxes bouncing off each other when AABB collisions occur, and you should be able to see the boxes moving back into the sphere if they started to leave the sphere.
 
 ## Submission
+
+Download the Unity project from GitHub by clicking the *Code* button followed by the *Download Zip* button in the drop down menu (alternatively, you can clone this repo to your local machine). Unzip the project and open it in Unity by adding the project through Unity Hub.
+
+Complete the tasks in the *CollisionTests.cs*. Verify that no errors are popping up in the Unity console. **Errors in scripts will prevent Unity from entering play mode.**
+
+Zip you *CollisionTests.cs* script into an archive named *FirstName_LastName_A0.zip* filling in FirstName and LastName with your first and last name.
+
+**We will be testing your completed functions (*collisionVertexSphere* and *collisionAABB*) so be sure to complete those functions.**
+
+This assignment is worth **100 points**:
+- 30 points for completing collisionVertexSphere function
+	- Compute squared distance correctly
+	- Compare squared distance and squared radius correctly
+- 60 points for completing collisionAABB function
+	- X-axis test correct
+	- Y-axis test correct
+	- Z-axis test correct
+- 10 points for no errors in Unity console
+  - (Warnings are fine)
+
