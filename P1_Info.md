@@ -1,6 +1,8 @@
 
 # Programming Assignment 1
 
+[Video Link](https://www.youtube.com/watch?v=glUTdwxmdR8)
+
 ## Description
 This assignment introduces concepts of collision detection and physics-derived motion of rigid bodies. The results of the assignment should allow you to understand a basic and yet fundamental approach to collision detection as it is used in virtual worlds. This topic is relevant to explore further computational geometry as it pertains to broad-phase (e.g., **oriented bounding boxes**, **sphere collisions**) and narrow-phase (**Separating-Axis Theorem**, **Gilbert-Johnson-Keerthi**, **Minkowski-Portal Refinement**, **Voronoi Clip**) collision detection algorithms. The assignment will also provide some information regarding discrete and continuous flavors of collisions detection.
 
