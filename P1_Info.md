@@ -96,11 +96,11 @@ Because of the increased cost for box collisions, we might want to utilize the s
 
 An AABB means that the dimensions of the box are parallel to like axes of a coordinate space. This description is somewhat abstract because, similar to sphere collisions, the characteristic of AABB collisions hold for arbitrary dimensions. Let's consider a one-dimensional scenario to start:
 
-**Given two line segments on a single axis, because line segments are continuous and described by end points, if one of the end points falls between the end points of the other line, then these two lines must be occupying some of the same space on this axis.** **Otherwise, these lines are not intersecting.** Visually, this is shown below.
+**Given two line segments on a single axis, because line segments are continuous and described by end points, if one of the end points falls between the end points of the other line, then these two lines must be occupying some of the same space on this axis.** **Otherwise, these lines are not intersecting.**
 
-[[image]]
 
-For arbitrary dimensions with AABBs, this axis test needs to be performed for all dimensions present (i.e., twice in 2D, three times in 3D, etc..). If any of these tests fail to find an intersection along an axis, then there must be a separating axis between the two boxes - for more information, feel free to read into **separating-axis theorem**. This means that, for 3D, the x-values of the two AABBs are tested for intersection, y-values are testing for intersection, and the z-values are tested for intersection *independently of the other axes!*
+
+For arbitrary dimensions with AABBs, this axis test needs to be performed for all dimensions present (i.e., twice in 2D, three times in 3D, etc..). If any of these tests fail to find an intersection along an axis, then there must be a separating axis between the two boxes - for more information, feel free to read into **separating-axis theorem**. This means that, for 3D, the x-values of the two AABBs are tested for intersection, y-values are tested for intersection, and the z-values are tested for intersection *independently of the other axes!*
 
 In pseudo code, this amounts to:
 
@@ -109,11 +109,11 @@ In pseudo code, this amounts to:
 		- **If there is an intersection on the z axis**
 			- ***Then the AABBs are colliding***
 		- Else
-			- The z axis is a separating axis
+			- The z axis has a separating axis
 	- Else
-		- The y axis is a separating axis
+		- The y axis has a separating axis
 - Else
-	- The x axis is a separating axis
+	- The x axis has a separating axis
 
 To perform each of these separating axis test, given AABB, the minimal amount of information needed is a Vector holding the minimum values along each axis and a Vector holding the maximum values along each axis. For instance:
 
