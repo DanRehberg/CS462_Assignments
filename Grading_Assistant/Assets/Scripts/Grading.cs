@@ -49,6 +49,24 @@ public class Grading : MonoBehaviour
             string fullpath = Path.Combine(Directory.GetCurrentDirectory(), compressPath);
             string dest = Path.Combine(Directory.GetCurrentDirectory(), testsPath);
             string[] files = Directory.GetFiles(fullpath);
+            //Clear out files and directories in the testsPath for
+            //  subsequent runs of makeTestFiles (could use enumerated..)
+            try
+            {
+                string[] subdirectories = Directory.GetDirectories(dest);
+                foreach (string s in subdirectories)
+                {
+                    Directory.Delete(s, true);
+                }
+            }
+            catch (System.Exception err)
+            {
+                print(err.Message);
+                print("ERROR OCCURRED WHEN PURGING OLD TEST DIRECTORIES, IS THE " + testsPath + " FOLDER MISSING??!!");
+                print("Attempting to add the directory..");
+                Directory.CreateDirectory(dest);
+            }
+
             //Build all test files in directories by students' name
             foreach (string f in files)
             {
@@ -152,10 +170,10 @@ public class Grading : MonoBehaviour
             {
                 shaderPath = Directory.GetFiles(d, "*Dir.shader", SearchOption.AllDirectories)[0];
                 dirDeduction[index] = (illegalHelpers(Path.Combine(d, shaderPath)) == false) ? 0 : -5;
-                
+
                 shaderPath = Directory.GetFiles(d, "*Point.shader", SearchOption.AllDirectories)[0];
                 pointDeduction[index] = (illegalHelpers(Path.Combine(d, shaderPath)) == false) ? 0 : -5;
-                
+
                 shaderPath = Directory.GetFiles(d, "*Spot.shader", SearchOption.AllDirectories)[0];
                 spotDeduction[index] = (illegalHelpers(Path.Combine(d, shaderPath)) == false) ? 0 : -5;
             }
@@ -163,6 +181,7 @@ public class Grading : MonoBehaviour
             {
                 print(err.Message + " student " + name + " might have missing shaders..");
             }
+            index += 1;
         }
     }
     bool illegalHelpers(string shaderPath)
@@ -209,7 +228,7 @@ public class Grading : MonoBehaviour
         if (!makeTestFiles)
         {
             if (curIndex < 0)
-            { 
+            {
                 if (testDirs.Length == 0)
                 {
                     text.text = "No Test Directories Found, did you run editor with makeTestFiles on?";
@@ -252,19 +271,19 @@ public class Grading : MonoBehaviour
                         print("Changing to " + name + "\'s shaders");
                         if (dirChange == null)
                         {
-                            print("\tCould not find " + name + "Dir");
+                            Debug.LogError("\tCould not find " + name + "Dir");
                             dir.shader = Shader.Find("Unlit/Dir");
                         }
                         else dir.shader = dirChange;
                         if (pointChange == null)
                         {
-                            print("\tCould not find " + name + "Point");
+                            Debug.LogError("\tCould not find " + name + "Point");
                             point.shader = Shader.Find("Unlit/Point");
                         }
                         else point.shader = pointChange;
                         if (spotChange == null)
                         {
-                            print("\tCould not find " + name + "Spot");
+                            Debug.LogError("\tCould not find " + name + "Spot");
                             spot.shader = Shader.Find("Unlit/Spot");
                         }
                         else spot.shader = spotChange;
