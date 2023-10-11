@@ -1,10 +1,12 @@
 
 # Programming Assignment 1
 
+[Video Link](https://www.youtube.com/watch?v=glUTdwxmdR8)
+
 ## Description
 This assignment introduces concepts of collision detection and physics-derived motion of rigid bodies. The results of the assignment should allow you to understand a basic and yet fundamental approach to collision detection as it is used in virtual worlds. This topic is relevant to explore further computational geometry as it pertains to broad-phase (e.g., **oriented bounding boxes**, **sphere collisions**) and narrow-phase (**Separating-Axis Theorem**, **Gilbert-Johnson-Keerthi**, **Minkowski-Portal Refinement**, **Voronoi Clip**) collision detection algorithms. The assignment will also provide some information regarding discrete and continuous flavors of collisions detection.
 
-**Note:** Collision detection is a large field with a plethora of research behind it. Highly specialized collision scenarios are used across several parts of a game engine as well as for writing more advanced shaders. It is commonly part of the *"physics engine"* inside a game engine as mechanical simulation requires knowing if volumes are occupying the same space, and what axis or what contact point describes this overlap. For an entire catalogue of collision detection solution for simulation, ray tracing, and more, please check out *Christer Ericson*'s book **Real-time Collision Detection**, and for physics integration with code, feel free to check out *Martin Baker*'s website [https://www.euclideanspace.com/physics/dynamics/collision/index.htm].
+**Note:** Collision detection is a large field with a plethora of research behind it. Highly specialized collision scenarios are used across several parts of a game engine as well as for writing more advanced shaders. It is commonly part of the *"physics engine"* inside a game engine as mechanical simulation requires knowing if volumes are occupying the same space, and what axis or what contact point describes this overlap. For an entire catalogue of collision detection solution for simulation, ray tracing, and more, please check out *Christer Ericson*'s book **Real-time Collision Detection**, and for physics integration with code, feel free to check out *Martin Baker*'s website https://www.euclideanspace.com/physics/dynamics/collision/index.htm.
 
 ## Background
 
@@ -12,7 +14,7 @@ When math problems are solved by hand, it is typically desired to have exact **a
 
 **next state = initial state + some change**. 
 
-The above is a brief synopsis of Euler integration, feel free to read [https://en.wikipedia.org/wiki/Euler_method] for more information. Computers are an excellent tool for these discretized approaches to solving numerical problems as the states of a computer are discrete. Virtual worlds hoping to simulate physical phenomena will employ these numerical methods to apply motion to objects, including influence of external Forces, as well as resolve constraints describing interactions between objects/fields. **However, the discrete nature of these problems and numerical precision pose tradeoffs between accuracy and performance for real-time physics simulations**. For instance, if a time step used for Euler integration is too large, then an object will deviate more from its original analytical trajectory, but allowing this to happen means information on-screen is presented in a time state near identical to the end user's perspective.
+The above is a brief synopsis of Euler integration, feel free to read https://en.wikipedia.org/wiki/Euler_method for more information. Computers are an excellent tool for these discretized approaches to solving numerical problems as the states of a computer are discrete. Virtual worlds hoping to simulate physical phenomena will employ these numerical methods to apply motion to objects, including influence of external Forces, as well as resolve constraints describing interactions between objects/fields. **However, the discrete nature of these problems and numerical precision pose tradeoffs between accuracy and performance for real-time physics simulations**. For instance, if a time step used for Euler integration is too large, then an object will deviate more from its original analytical trajectory, but allowing this to happen means information on-screen is presented in a time state near identical to the end user's perspective.
 
 The compromise with Euler integration is minimal as all objects in a game world can be updated independently of one another, but this method of motion causes more trouble for *accuracy to performance* when dependencies are involved - notably, collisions between bodies. Two primary approaches to collision detection (and simulation) exist:
 
@@ -94,11 +96,11 @@ Because of the increased cost for box collisions, we might want to utilize the s
 
 An AABB means that the dimensions of the box are parallel to like axes of a coordinate space. This description is somewhat abstract because, similar to sphere collisions, the characteristic of AABB collisions hold for arbitrary dimensions. Let's consider a one-dimensional scenario to start:
 
-**Given two line segments on a single axis, because line segments are continuous and described by end points, if one of the end points falls between the end points of the other line, then these two lines must be occupying some of the same space on this axis.** **Otherwise, these lines are not intersecting.** Visually, this is shown below.
+**Given two line segments on a single axis, because line segments are continuous and described by end points, if one of the end points falls between the end points of the other line, then these two lines must be occupying some of the same space on this axis.** **Otherwise, these lines are not intersecting.**
 
-[[image]]
 
-For arbitrary dimensions with AABBs, this axis test needs to be performed for all dimensions present (i.e., twice in 2D, three times in 3D, etc..). If any of these tests fail to find an intersection along an axis, then there must be a separating axis between the two boxes - for more information, feel free to read into **separating-axis theorem**. This means that, for 3D, the x-values of the two AABBs are tested for intersection, y-values are testing for intersection, and the z-values are tested for intersection *independently of the other axes!*
+
+For arbitrary dimensions with AABBs, this axis test needs to be performed for all dimensions present (i.e., twice in 2D, three times in 3D, etc..). If any of these tests fail to find an intersection along an axis, then there must be a separating axis between the two boxes - for more information, feel free to read into **separating-axis theorem**. This means that, for 3D, the x-values of the two AABBs are tested for intersection, y-values are tested for intersection, and the z-values are tested for intersection *independently of the other axes!*
 
 In pseudo code, this amounts to:
 
@@ -107,11 +109,11 @@ In pseudo code, this amounts to:
 		- **If there is an intersection on the z axis**
 			- ***Then the AABBs are colliding***
 		- Else
-			- The z axis is a separating axis
+			- The z axis has a separating axis
 	- Else
-		- The y axis is a separating axis
+		- The y axis has a separating axis
 - Else
-	- The x axis is a separating axis
+	- The x axis has a separating axis
 
 To perform each of these separating axis test, given AABB, the minimal amount of information needed is a Vector holding the minimum values along each axis and a Vector holding the maximum values along each axis. For instance:
 
@@ -196,3 +198,23 @@ While *motionOn* is false, the console window will print when two AABBs are foun
 While *motionOn* is true, the boxes will have motion integration applied using a timestep and their respective velocities. You should be able to see the boxes bouncing off each other when AABB collisions occur, and you should be able to see the boxes moving back into the sphere if they started to leave the sphere.
 
 ## Submission
+
+Download the Unity project from GitHub by clicking the *Code* button followed by the *Download Zip* button in the drop down menu (alternatively, you can clone this repo to your local machine). Unzip the project and open it in Unity by adding the project through Unity Hub.
+
+Complete the tasks in the *CollisionTests.cs*. Verify that no errors are popping up in the Unity console. **Errors in scripts will prevent Unity from entering play mode.**
+
+Zip you *CollisionTests.cs* script into an archive named *FirstName_LastName_A0.zip* filling in FirstName and LastName with your first and last name.
+
+**We will be testing your completed functions (*collisionVertexSphere* and *collisionAABB*) so be sure to complete those functions.**
+
+This assignment is worth **100 points**:
+- 30 points for completing collisionVertexSphere function
+	- Compute squared distance correctly
+	- Compare squared distance and squared radius correctly
+- 60 points for completing collisionAABB function
+	- X-axis test correct
+	- Y-axis test correct
+	- Z-axis test correct
+- 10 points for no errors in Unity console
+  - (Warnings are fine)
+
