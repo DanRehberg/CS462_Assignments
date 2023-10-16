@@ -119,8 +119,8 @@ To perform each of these separating axis test, given AABB, the minimal amount of
 
 **Given a 2D AABB problem, with min0 and max0 describing the minimum and maximum positions of one box and min1 and max1 describing the minimum and maximum positions of a second box:**
 
-- If min0.x is between min1.x and max1.x OR max0.x is between min1.x and max1.x
-	- If min0.y is between min1.y and max1.y OR max0.y is between min1.y and max1.y
+- If min0.x is between min1.x and max1.x OR max0.x is between min1.x and max1.x OR min1.x is between min0.x and max0.x OR max1.x is between min0.x and max0.x
+	- If min0.y is between min1.y and max1.y OR max0.y is between min1.y and  max1.y OR min1.y is between min0.y and max0.y OR max1.y is between min0.y and max0.y
 		- Then the AABBs are colliding
 	- Else
 		- No collision
@@ -128,6 +128,8 @@ To perform each of these separating axis test, given AABB, the minimal amount of
 	- No Collision
 
 Notice that the two sets of conditions to test are nearly identical, **the only change is what axis is being examined.**
+
+The above conditions can be reduced further if comparing the min0 to the max1 and the min1 to the max0 in a consistent manner.
 
 Briefly, it is worth mentioning why the same separating-axis tests cannot be performed if hoping to have an even tighter fitting bounding box: *an oriented-bounding box (OBB)*.
 
