@@ -88,7 +88,7 @@ Effectively, all we need do is compute the cross product between the tangent and
 
 **Note**: If two vectors are parallel or antiparallel, then the cross product returns the zero vector.
 
-Again, to align with the original description of the normal map texture, we want the forward axis to align with the surface normal direction, and the first two axes should describe the tangent plane. So, we can building a 3D matrix where ***the first column is the tangent vector, the second column is the bitangent vector, and the third column is the normal vector***. **This is commonly call a *TBN matrix***.
+Again, to align with the original description of the normal map texture, we want the forward axis to align with the surface normal direction, and the first two axes should describe the tangent plane. So, we can building a 3D matrix where ***the first column is the tangent vector, the second column is the bitangent vector, and the third column is the normal vector***. **This is commonly called a *TBN matrix***.
 
 $$TBN Matrix = \begin{bmatrix} T_x & B_x & N_x \\\ T_y & B_y & N_y \\\ T_z & B_z & N_z \end{bmatrix}$$
 
