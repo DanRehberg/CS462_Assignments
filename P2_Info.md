@@ -70,7 +70,7 @@ The important consistency for tangent space is that a normal texture is represen
 
 An example matrix defining a 3D coordinate system:
 
-$$trivial\:3D\:Coordinate\:System = \begin{bmatrix} 1 & 0 & 0 \\\ 0 & 1 & 0 \\\ 0 & 0 & 1 \end{bmatrix}$$
+$$trivial 3D Coordinate System = \begin{bmatrix} 1 & 0 & 0 \\\ 0 & 1 & 0 \\\ 0 & 0 & 1 \end{bmatrix}$$
 
 **Note**: A consistency that can be overlooked in software (**IFF using a common library for matrix operations**) is the *major order* of vectors in a matrix. Commonly in math, matrices are described with vectors as columns, so it will be described here in that manner. However, implementation in software packages can be such that vectors are stored in a matrix in *row* OR *column major order*. As a programmer, this should not influence your thoughts when defining a coordinate system because the implementation of the library will (likely, but hopefully) change to rows dotted with columns and columns dotted with rows, respectively and appropriately, for matrix multiplications.
 
@@ -90,7 +90,7 @@ Effectively, all we need do is compute the cross product between the tangent and
 
 Again, to align with the original description of the normal map texture, we want the forward axis to align with the surface normal direction, and the first two axes should describe the tangent plane. So, we can building a 3D matrix where ***the first column is the tangent vector, the second column is the bitangent vector, and the third column is the normal vector***. **This is commonly call a *TBN matrix***.
 
-$$TBN\:Matrix = \begin{bmatrix} T_x & B_x & N_x \\\ T_y & B_y & N_y \\\ T_z & B_z & N_z \end{bmatrix}$$
+$$TBN Matrix = \begin{bmatrix} T_x & B_x & N_x \\\ T_y & B_y & N_y \\\ T_z & B_z & N_z \end{bmatrix}$$
 
 **The only caveat is *if a mesh's model matrix defines a rotation from its local coordinate space, then the tangent, bitangent, and normal vectors in the tangent space matrix must also be rotated!***
 
