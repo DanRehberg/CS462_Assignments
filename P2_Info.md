@@ -15,9 +15,9 @@ While not present in A0, the assignment documentation mentions a characteristic 
 
 ![Flat Sphere](https://github.com/DanRehberg/CS462_Assignments/blob/main/images/sphereFlat.png)
 
-Specifically, for something like a curve, while we typically render planar surfaces in real-time computer graphics, having a mesh's vertices store disparate normal vectors allows for interpolation to create a seemingly curved surface when lighting equations are applied per pixel:
+Specifically, for something like a curve, while we typically render planar surfaces in real-time computer graphics, having a mesh's vertices store disparate normal vectors allows for interpolation to create a seemingly curved surface when lighting equations are applied per pixel (**blue represents vertex normals, yellow is interpolated pixel normals**):
 
-![Line Segment with Interpolated Normals](https://github.com/DanRehberg/CS462_Assignments/blob/main/images/gouraudInterp.png)
+![Line Segment with Interpolated Normals](https://github.com/DanRehberg/CS462_Assignments/blob/main/images/interpNorms.png)
 
 The result of this on the example sphere is now a "*smooth*" surface:
 
@@ -27,9 +27,9 @@ The result of this on the example sphere is now a "*smooth*" surface:
 
 With this technique, we can achieve a diverse set of detail over arbitrary topologies through just the supplementation of varying normals on discretized representations of surfaces (i.e., triangulated meshes). However, **we are bound to limiting the vertex density of meshes because we are trying to achieve performant interactive computer graphics!** This means that building detail at the *microfacet* level might be unreasonable for real-time virtual worlds, even if it is the type of solution found for *offline rendering* at studious like Disney. Feel free to check out *Universal Scene Description* for more info on scene graphs for offline rendering: https://openusd.org/release/api/index.html
 
-As you have experienced in A0, and likely in interactive computer graphics, we can add more detail to a surface using textures. This works given the interpolation features of vertex attributes. Again, consider two vertices where pixels are rasterized between these endpoints. If one of the attributes passed along the render pipeline is a UV coordinate (*a coordinate that maps to a 2D texture to look up color values*), then each pixel generated can have is UV coordinate computed through interpolation:
+As you have experienced in A0, and likely in interactive computer graphics, we can add more detail to a surface using textures. This works given the interpolation features of vertex attributes. Again, consider two vertices where pixels are rasterized between these endpoints. If one of the attributes passed along the render pipeline is a UV coordinate (*a coordinate that maps to a 2D texture to look up color values*), then each pixel generated can have is UV coordinate computed through interpolation (**blue represents vertex UVs, yellow is interpolated pixel UVs**):
 
-//Line endpoints with interpolated UV coordinates
+![Line Segment with Interpolated UVs](https://github.com/DanRehberg/CS462_Assignments/blob/main/images/interpUV.png)
 
 **Note**: This interpolation ensures that sampling from a texture is spatially coherent between vertices.
 
