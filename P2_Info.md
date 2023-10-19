@@ -13,15 +13,15 @@ From A0, you have seen the concept of shader programs which run on a GPU. The re
 
 While not present in A0, the assignment documentation mentions a characteristic provided in the *modern rendering pipeline* which allows increased detail when performing per-pixel lighting. This is interpolation of information between vertices, a quality influenced by *Henri Gouraud* for "***smooth***" shading. Effectively, when you pass vertex attributes out of a vertex shader, rasterization of pixel information (*i.e., new data produced between vertices*), the render pipeline can provide interpolated values of vertex attributes for pixels generated within a primitive (e.g., lines, triangles). This allows for Gouraud shading, *an interpolation of normal vectors for pixels between vertices of a mesh*. Without this interpolation, discretized shapes that represent curves - **like a sphere** - would look blocky. You can see this in Blender if you add a sphere object and render it with the "*flat*" qualifier:
 
-//Flat sphere
+![Flat Sphere](https://github.com/DanRehberg/CS462_Assignments/blob/main/images/sphereFlat.png)
 
 Specifically, for something like a curve, while we typically render planar surfaces in real-time computer graphics, having a mesh's vertices store disparate normal vectors allows for interpolation to create a seemingly curved surface when lighting equations are applied per pixel:
 
-//Line segment with interpolated normals
+![Line Segment with Interpolated Normals](https://github.com/DanRehberg/CS462_Assignments/blob/main/images/gouraudInterp.png)
 
 The result of this on the example sphere is now a "*smooth*" surface:
 
-//Smooth sphere
+![Smooth Sphere](https://github.com/DanRehberg/CS462_Assignments/blob/main/images/sphereSmooth.png)
 
 **Note**: Rendering APIs like OpenGL and DirectX allow you to pass out and take in vertex attributes which are not interpolated for situations where you want a surface to be flat.
 
