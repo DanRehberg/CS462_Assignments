@@ -94,7 +94,7 @@ Shader "Unlit/PointTBN"
                             normalize(i.B),
                             normalize(i.N));
 
-                    //NEW TASK 2: Transform your normals by the TBN matrix
+                    //NEW TASK 2: Transform your normals (norms vector) by the TBN matrix
                     norms = ;
                     
                     //OLD TASK 3: Compute the Lambertian Reflectance coefficient 
