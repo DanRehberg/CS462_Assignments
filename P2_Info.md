@@ -35,11 +35,13 @@ As you have experienced in A0, and likely in interactive computer graphics, we c
 
 While an albedo texture provides the diffuse color of a surface, additional textures could map to a surface to provide higher fidelity for a surface and the type of material it represents. A modern extreme of this is *physically-based rendering* (**PBR**) which describes the hardness of a surface and how metallic it is (these two attributes describe how much light is diffused versus a hard, specular, reflection). Before PBR, one of the simplest techniques for increasing surface fidelity with textures was **bump mapping**. Bump mapping was introduced by *James Blinn*, the same person behind the *Blinn-Phong* specular reflection optimization over the *Phong* reflection model. *A bump map is a grayscale texture that skews the interpolated surface normal to provide bumps and wrinkles on a surface without needing to increase the vertex density of a mesh*.
 
-//Grayscale "height map"
+![Height Map](https://github.com/DanRehberg/CS462_Assignments/blob/main/images/heightmapExample.png)
 
 The more modern approach to modifying surface normals, **and relevant to this assignment**, is achieved by using a ***normal map***. A normal map is a texture that explicitly states the normal direction for a given texel - *a texel is a pixel within a texture object*. Bump maps best describe smooth gradients on a surface, but normal maps can describe arbitrary vector changes which are useful for conveying smooth or jagged microfacets. It can also be more performant than bump mapping as normal mapping only requires one texture sample to devise a normal vector whereas bump mapping requires a *finite difference* analysis with several samples to account for neighboring texel descriptions of height.
 
 You may have seen a normal map before. It uses the red, green, and blue color channels of a texture to describe the normal direction per pixel:
+
+![Normal Map](https://github.com/DanRehberg/CS462_Assignments/blob/main/images/normalmapExample.png)
 
 The complication with using normal maps is the need to explicitly determine where each texel's normal vector is facing in the rendered scene. For 2D scenarios, this can be trivial as all polygonal faces might be aligned in one direction, but in 3D the triangulated surfaces of a mesh can be facing arbitrary directions. This means the texture needs to be transformed to the *tangent space* (i.e., the planar surface) of a mesh, and then transformed to global space (*i.e., the model matrix transform*) to be compared to a light vector which exists in global space.
 
