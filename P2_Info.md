@@ -70,7 +70,7 @@ The important consistency for tangent space is that a normal texture is represen
 
 An example matrix defining a 3D coordinate system:
 
-$trivial\:3D\:Coordinate\:System = \begin{bmatrix} 1 & 0 & 0 \\\ 0 & 1 & 0 \\\ 0 & 0 & 1 \end{bmatrix}$
+$$trivial\:3D\:Coordinate\:System = \begin{bmatrix} 1 & 0 & 0 \\\ 0 & 1 & 0 \\\ 0 & 0 & 1 \end{bmatrix}$$
 
 **Note**: A consistency that can be overlooked in software (**IFF using a common library for matrix operations**) is the *major order* of vectors in a matrix. Commonly in math, matrices are described with vectors as columns, so it will be described here in that manner. However, implementation in software packages can be such that vectors are stored in a matrix in *row* OR *column major order*. As a programmer, this should not influence your thoughts when defining a coordinate system because the implementation of the library will (likely, but hopefully) change to rows dotted with columns and columns dotted with rows, respectively and appropriately, for matrix multiplications.
 
