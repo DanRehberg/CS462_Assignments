@@ -1,6 +1,8 @@
 
 # Programming Assignment 2
 
+[Video Link](https://www.youtube.com/watch?v=F-eBozr0vCI)
+
 ## Description
 
 This assignment introduces the concept of defining coordinate spaces for tangent spaces to solve otherwise complex problems. The results of the assignment should allow you to understand how defining a coordinate system can help you solve problems in computer graphics. This topic is relevant beyond rendering graphics, and is also pertinent to solving more complicated collision detection and physics problems. Defining coordinate systems allows you a definite (fixed/constrained) space to work from, ensuring you are always within the bounds of some domain.
