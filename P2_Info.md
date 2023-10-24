@@ -149,3 +149,19 @@ The tangent vector is provided by Unity for your mesh inside the *appdata* struc
 The *norms* vector is initially storing the normal vector sampled from a new texture object uniform associated with the shaders. You do not need to sample from this texture, just transform norms in the *NEW TASK 2* line to reassign it with its modified values.
 
 ## Submission
+
+Download the Unity project from GitHub by clicking the *Code* button followed by the *Download Zip* button in the drop down menu. Unzip the project and open it in Unity by adding the project through Unity Hub.
+
+Complete the tasks in the *DirTBN.shader*, *PointTBN.shader*, and *SpotTBN.shader*. Verify that no errors are popping up in the Unity console related to these shaders.
+
+Zip you three shaders into an archive named *FirstName_LastName_P2.zip* filling in FirstName and LastName with your first and last name.
+
+This assignment is worth **100 points**:
+- 70 points for completing the *New Tasks*
+	- Tangent vector correct and passed out of all vertex shaders
+   	- Bitangent vector computed correctly and pass out of all vertex shaders
+   	- TBN matrix used to correctly modify norms
+- 20 points for completing the *Old Tasks*
+	- All fragments tasks completed again for each shader
+- 10 point for no errors for DirTBN.shader, PointTBN.shader, and SpotTBN.shader in Unity console
+  - (Is okay if unrelated errs or warnings come up)
