@@ -142,7 +142,7 @@ Then, there are two new tasks to complete for each shader (you can just copy and
 	- Set norms equal to itself transformed by the provided TBN matrix
 
 
-*NEW TASK 1* will require a cross product between *v.tangent* and *n.tangent*. Finding the direction based on operand order can be described using a notion of "*handedness*". In this particular case, we are dealing with a left-handed coordinate system and want our bitangent vector to point in the same direction as the global x-axis (in the situation were the global coordinate system is mapped to the tangent plane). If you point your middle finger of your left hand away from you, and point your index finger up, the cross product of your middle finger and index finger will yield the same direction as your thumb if it is sticking out. In this handedness case, your middle finger should be the v.normal and your index finger should be v.tangent. If you were two flip these operands in the cross product, then the result would point in the opposite direction of your thumb.
+*NEW TASK 1* will require a cross product between *v.tangent* and *v.normal*. Finding the direction based on operand order can be described using a notion of "*handedness*". In this particular case, we are dealing with a left-handed coordinate system and want our bitangent vector to point in the same direction as the global x-axis (in the situation were the global coordinate system is mapped to the tangent plane). If you point your middle finger of your left hand away from you, and point your index finger up, the cross product of your middle finger and index finger will yield the same direction as your thumb if it is sticking out. In this handedness case, your middle finger should be the v.normal and your index finger should be v.tangent. If you were two flip these operands in the cross product, then the result would point in the opposite direction of your thumb.
 
 The tangent vector is provided by Unity for your mesh inside the *appdata* struct. The *float3* vectors **b, t,** and **n** are passed to three vectors being sent as output to be potentially interpolated in transit to the fragment shader after rasterization.
 
@@ -159,7 +159,7 @@ Zip you three shaders into an archive named *FirstName_LastName_P2.zip* filling 
 This assignment is worth **100 points**:
 - 70 points for completing the *New Tasks*
 	- Tangent vector correct and passed out of all vertex shaders
-   	- Bitangent vector computed correctly and pass out of all vertex shaders
+   	- Bitangent vector computed correctly and passed out of all vertex shaders
    	- TBN matrix used to correctly modify norms
 - 20 points for completing the *Old Tasks*
 	- All fragments tasks completed again for each shader
