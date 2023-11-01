@@ -89,10 +89,10 @@ Shader "Unlit/PointTBN"
                     float3 norms =
                         normalize(2.0 * tex2D(_NormTex, i.uv).rgb - 1.0);
 
-                    float3x3 TBN = 
+                    float3x3 TBN = transpose(
                         float3x3(normalize(i.T),
                             normalize(i.B),
-                            normalize(i.N));
+                            normalize(i.N)));
 
                     //NEW TASK 2: Transform your normals (norms vector) by the TBN matrix
                     norms = ;
