@@ -1443,8 +1443,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 0.5
-  noBook: {fileID: 0}
-  haveBook: {fileID: 0}
+  noBook: {fileID: 2100000, guid: 8e61c82ec421bda4b83464910fd7aeb4, type: 2}
+  haveBook: {fileID: 2100000, guid: e12f1029ba4e9f742a64e60fcbd82dcf, type: 2}
 --- !u!1 &1240298531
 GameObject:
   m_ObjectHideFlags: 0
@@ -1557,8 +1557,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 0.5
-  noBook: {fileID: 0}
-  haveBook: {fileID: 0}
+  noBook: {fileID: 2100000, guid: 8e61c82ec421bda4b83464910fd7aeb4, type: 2}
+  haveBook: {fileID: 2100000, guid: e12f1029ba4e9f742a64e60fcbd82dcf, type: 2}
 --- !u!1 &1273939833
 GameObject:
   m_ObjectHideFlags: 0
@@ -1738,8 +1738,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 0.5
-  noBook: {fileID: 0}
-  haveBook: {fileID: 0}
+  noBook: {fileID: 2100000, guid: 8e61c82ec421bda4b83464910fd7aeb4, type: 2}
+  haveBook: {fileID: 2100000, guid: e12f1029ba4e9f742a64e60fcbd82dcf, type: 2}
 --- !u!1 &1613968610
 GameObject:
   m_ObjectHideFlags: 0
@@ -1852,5 +1852,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 0.5
-  noBook: {fileID: 0}
-  haveBook: {fileID: 0}
+  noBook: {fileID: 2100000, guid: 8e61c82ec421bda4b83464910fd7aeb4, type: 2}
+  haveBook: {fileID: 2100000, guid: e12f1029ba4e9f742a64e60fcbd82dcf, type: 2}

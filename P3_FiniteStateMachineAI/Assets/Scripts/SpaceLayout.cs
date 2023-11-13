@@ -7,7 +7,6 @@ public class SpaceLayout : MonoBehaviour
     //Environment information
     public GameObject bookshelf;
     public GameObject counter;
-    public GameObject queue;
     public Book[] books;
     public Student[] students;
     public Librarian librarian;

@@ -289,7 +289,6 @@ public class Librarian : MonoBehaviour
                     if (waitForTime(RESET_TIME))
                     {
                         text.text = "";
-                        selfTimer = 0.0f;
                         state = 0;
                     }
                     break;
