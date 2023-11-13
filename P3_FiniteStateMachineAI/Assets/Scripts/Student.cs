@@ -5,6 +5,8 @@ using UnityEngine;
 public class Student : MonoBehaviour
 {
     public float radius;
+    public Material noBook;
+    public Material haveBook;
 
     private Book book = null;
     // Start is called before the first frame update
@@ -15,6 +17,7 @@ public class Student : MonoBehaviour
 
     public Book getBook()
     {
+        this.GetComponent<Renderer>().material = noBook;
         Book temp = book;
         book = null;
         return temp;
@@ -33,6 +36,7 @@ public class Student : MonoBehaviour
     public bool setBook(Book val)
     {
         if (book != null) return false;
+        this.GetComponent<Renderer>().material = haveBook;
         book = val;
         return true;
     }
