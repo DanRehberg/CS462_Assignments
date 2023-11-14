@@ -73,7 +73,7 @@ The function takes in a float *max* which describes the amount of time that must
 
 To assist in your own project developments in the course, the *Update* function found in the *Librarian.cs* script demonstrates the implementation of the FSM describing the behavior of the librarian in this miniature virtual world. *While observing the FSM in the Update function is not directly related to completing the assignment tasks, observing the structure of this FSM implementation should allow you implement your own basic AI.* For instance, this project began by drawing a FSM model by hand to construct the logical sequence of the librarian:
 
-//pending image
+![Librarian Finite State Machine Diagram](https://github.com/DanRehberg/CS462_Assignments/blob/main/images/librarianFSM.png)
 
 Within the switch statement, the librarian begins in a state where they are waiting at a counter to service a request by a student:
 - State 0:
