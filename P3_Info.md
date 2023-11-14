@@ -23,7 +23,7 @@ The limited power of this model might seem concerning, but this simplicity enabl
 
 Within a videogame setting, the states of an FSM can be used to describe the flow of animation states (e.g., standing idle, walking, jumping, etc..) but can also correspond to more complicated tasks like: *find a path from A to B*, *act as an interactive merchant while at B*, *if the time of day is past 6:00 PM then find a path from B to A*, etc.. These types of diagrams can be visualized using conventions for drawing FSM:
 
-//pending image
+![Example Finite State Machine Diagram](https://github.com/DanRehberg/CS462_Assignments/blob/main/images/aToBTimeFSM.png)
 
 **Note:** The use of FSMs extend beyond AI inside virtual worlds. An FSM can be used to ensure *"on-the-rails"* moments in video games for real-time cutscenes, or for having user controlled limited within a narrow path for cinematic scripted events.
 
