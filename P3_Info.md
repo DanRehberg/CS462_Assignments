@@ -58,6 +58,7 @@ There are only two new features to use in this project to complete the two funct
 
 Task 1 requires you to compute a velocity to return in the following function:
 - **private Vector3 velocity(float speed, Vector3 goalPosition)**
+
 To do so you must compute a new Vector3 *traveling from the librarian position to the goal position*. **Recall that vector subtraction is not commutative**, so if you find the librarian travels in the wrong direction you can simply swap the terms (operands) in this subtraction. Secondly, *you want only the direction information in this vector, therefore after you perform the subtraction you will want to normalize the result*. Once you have the normalized direction, you can *scale it by the speed* argument passed into the function. *In total, you find the general (normalized) direction from the librarian to the goal, then scale that vector by a speed factor to generate a velocity.*
 
 **To scale a vector by a float, you can use the typical asterisk operator for multiplication:**
@@ -67,6 +68,7 @@ To do so you must compute a new Vector3 *traveling from the librarian position t
 
 The second task requires a bit more management to work correctly as you will be modifying a member variable inside the Librarian class. The function to complete for this task is:
 - **private bool waitForTime(float max)**
+
 The function takes in a float *max* which describes the amount of time that must elapse (persistent across frames) before the AI can move onto the next state. **THEREFORE, DO NOT STALL THE PROGRAM IN THIS FUNCTION AS IT WILL PREVENT THE GAME FROM RENDERING NEW FRAMES!!** Instead, you will use the *Time.deltaTime* variable in Unity to *add the elapsed time from the previous frame to a member variable named selfTimer*. Once that is complete, *you will need to write an if-statement condition to test if selfTimer has exceeded the wait period defined by the float max argument passed into the function*. It the amount of time elapsed has exceeded max, *then you will need to reset selfTimer to zero and return true*. **Resetting selfTimer to zero is important to ensuring that future timed events can behave correctly in the FSM**. If you end up in a state where the librarian is waiting indefinitely, then check to make sure you have reset selfTimer.
 
 **Note:** in the Mono implementation of C#, numbers with a decimal point (*e.g., 0.0*) are seen as *double* types, **BUT** objects like Vector3 in Unity use 32-bit floating point types. To ensure your numerical values are seen as floats, be sure to add the '*f*' literal to the end of a typed value (*e.g., 0.0f*).
