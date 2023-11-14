@@ -137,7 +137,10 @@ Download the Unity project from GitHub by clicking the *Code* button followed by
 
 Complete the tasks in the *Librarian.cs*. Verify that no errors are popping up in the Unity console related to this script.
 
-Zip your completed script into an archive named *FirstName_LastName_P3.zip* filling in FirstName and LastName with your first and last name.
+Zip your completed Librarian.cs script into an archive named *FirstName_LastName_P3.zip* filling in FirstName and LastName with your first and last name.
 
 This assignment is worth **100 points**:
-Pending..
+- 40 points for completing the *velocity* function
+- 50 points for completing the *waitForTime* function
+- 10 point for no errors related to Librarian.cs in Unity console
+  - (Is okay if unrelated errs or warnings come up)
