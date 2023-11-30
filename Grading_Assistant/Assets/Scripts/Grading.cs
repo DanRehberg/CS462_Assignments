@@ -11,6 +11,8 @@ public class Grading : MonoBehaviour
 
     public TMPro.TextMeshProUGUI text;
 
+    public bool A0Grader;
+
     public bool makeTestFiles;
 
     public int underscoreParseCount;
@@ -18,6 +20,10 @@ public class Grading : MonoBehaviour
     string gradingPath = @"Assets\Grading";
     string compressPath = @"Assets\Grading\compressed";
     string testsPath = @"Assets\Grading\tests";
+
+    string dirName = "Dir";
+    string pointName = "Point";
+    string spotName = "Spot";
 
     long dataLimit = 10000;
 
@@ -43,6 +49,12 @@ public class Grading : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (!A0Grader)
+        {
+            dirName = "DirTBN";
+            pointName = "PointTBN";
+            spotName = "SpotTBN";
+        }
         if (makeTestFiles)
         {
             text.text = "Decompressing files from Grading/compressed directory; check console output for issues and status";
@@ -265,25 +277,25 @@ public class Grading : MonoBehaviour
                         string name = Path.GetFileName(testDirs[curIndex].TrimEnd('\\'));
                         student[curIndex] = name;
                         //Check for violations in shaderLab files
-                        Shader dirChange = Shader.Find("Unlit/" + name + "Dir");
-                        Shader pointChange = Shader.Find("Unlit/" + name + "Point");
-                        Shader spotChange = Shader.Find("Unlit/" + name + "Spot");
+                        Shader dirChange = Shader.Find("Unlit/" + name + dirName);
+                        Shader pointChange = Shader.Find("Unlit/" + name + pointName);
+                        Shader spotChange = Shader.Find("Unlit/" + name + spotName);
                         print("Changing to " + name + "\'s shaders");
                         if (dirChange == null)
                         {
-                            Debug.LogError("\tCould not find " + name + "Dir");
+                            Debug.LogError("\tCould not find " + name + dirName);
                             dir.shader = Shader.Find("Unlit/Dir");
                         }
                         else dir.shader = dirChange;
                         if (pointChange == null)
                         {
-                            Debug.LogError("\tCould not find " + name + "Point");
+                            Debug.LogError("\tCould not find " + name + pointName);
                             point.shader = Shader.Find("Unlit/Point");
                         }
                         else point.shader = pointChange;
                         if (spotChange == null)
                         {
-                            Debug.LogError("\tCould not find " + name + "Spot");
+                            Debug.LogError("\tCould not find " + name + spotName);
                             spot.shader = Shader.Find("Unlit/Spot");
                         }
                         else spot.shader = spotChange;
