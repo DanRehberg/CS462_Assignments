@@ -19,4 +19,7 @@ This assignment extends A0 to discuss how shaders can be used to add additional 
 This assignment demonstrates how a finite state machine approach to design can be used to build an artificial intelligent agent for controlled gameplay interactions. As the AI field moves into more Neural Network-based architecture, this assignment is meant to illustrate to students that a general computer model (i.e., finite state machine) is sufficient, easy to design, and tailor for creating AI interactions with a human player.
 
 ## Contribution Acknowledgements
-_pendng permissions.._
+- Adam Coler (Pilot tester)
+- Ryan Job (Pilot tester)
+- Nathan Kampbell (Pilot tester)
+- Everett Lewark (Reporting Bugs)
